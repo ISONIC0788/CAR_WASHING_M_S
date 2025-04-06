@@ -2,6 +2,7 @@ import * as React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CssBaseline from '@mui/material/CssBaseline';
 import CustomerTable from './components/CustomerTable';
+import CustomerManagement from './pages/CustomerManagement';
 import StaffForm from './components/StaffForm';
 import DashboardPage from './pages/DashboardPage';
 import StaffManagement from './pages/StaffManagement';
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="booking" element={<BookingManagement />} />
             <Route path="StaffManagement" element={<StaffManagement />} />
             <Route path="customers" element={<CustomerTable />} />
+            <Route path="customersms" element={<CustomerManagement />} />
             {/* Add nested routes if needed, e.g., /staff/:staffId */}
             {/* <Route path="StaffManagement" element={<StaffManagement />} /> */}
             {/* Catch-all route */}

@@ -8,6 +8,7 @@ export const NAVIGATION = [
   { segment: 'booking', title: 'Booking Management', icon: <BookOnlineIcon /> },
   { segment: 'StaffManagement', title: 'Staff Management', icon: <AssignmentIndIcon /> },
   { segment: 'customers', title: 'Customer Records', icon: <PeopleIcon /> },
+
   // Add other items, headers, dividers as needed
-  // { segment: 'StaffManagement', title: 'StaffManagement', icon: <PeopleIcon /> },
+  { segment: 'customersms', title: 'Customer Management', icon: <PeopleIcon /> },
 ];
