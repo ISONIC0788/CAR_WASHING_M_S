@@ -6,3 +6,4 @@ npm install @toolpad/core
 
 npm install @mui/icons-material
  
+npm install recharts
