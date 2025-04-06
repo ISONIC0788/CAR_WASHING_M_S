@@ -49,7 +49,7 @@ const StaffManagement = () => {
   return (
     <Container>
       <Typography variant="h4" sx={{ my: 2 }}>
-        Staff Management
+        Staff Management S
       </Typography>
       <StaffForm onAddStaff={addStaff} />
       <StaffList staffList={staffList} onDelete={deleteStaff} onView={onView} />
