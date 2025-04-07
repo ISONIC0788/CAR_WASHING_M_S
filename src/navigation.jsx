@@ -5,10 +5,10 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 export const NAVIGATION = [
   { segment: 'dashboard', title: 'Dashboard', icon: <DashboardIcon /> },
-  { segment: 'booking', title: 'Booking Management', icon: <BookOnlineIcon /> },
-  { segment: 'StaffManagement', title: 'Staff Management', icon: <AssignmentIndIcon /> },
-  { segment: 'customers', title: 'Customer Records', icon: <PeopleIcon /> },
+  { segment: 'booking', title: 'Booking ', icon: <BookOnlineIcon /> },
+  { segment: 'StaffManagement', title: 'Staff ', icon: <AssignmentIndIcon /> },
+  { segment: 'customers', title: 'Customer ', icon: <PeopleIcon /> },
 
   // Add other items, headers, dividers as needed
-  { segment: 'customersms', title: 'Customer Management', icon: <PeopleIcon /> },
+  { segment: 'customersms', title: 'Customer ', icon: <PeopleIcon /> },
 ];
