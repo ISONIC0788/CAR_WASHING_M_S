@@ -1,5 +1,5 @@
 // src/pages/DashboardPage.js
-import React from 'react'; // Make sure to install recharts: npm install recharts
+import React from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -10,7 +10,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
-// --- Sample Data (Replace with fetched data) ---
+// --- Sample Data (Replace with actual data from your components) ---
+// Assuming you can somehow access these data arrays
 const dailyBookingsData = [
   { name: 'Mon', bookings: 4 },
   { name: 'Tue', bookings: 6 },
@@ -35,6 +36,15 @@ const recentBookingsSample = [
     { id: 102, customer: 'Jane Smith', service: 'Interior Clean', status: 'In Progress' },
     { id: 103, customer: 'Bob Johnson', service: 'Exterior Wash', status: 'Completed' },
 ];
+
+// --- Assuming you have access to customer and staff data ---
+// You'll need to replace these with your actual data fetching or state management logic
+const totalCustomers = 2; // Example: Get this from CustomerManagement state
+const staffCountData = [ // Example: Get this from StaffManagement state
+  { name: 'Start', staffCount: 3 },
+  { name: 'Week 1', staffCount: 4 },
+  { name: 'Week 2', staffCount: 5 },
+];
 // ---
 
 export default function DashboardPage() {
@@ -44,16 +54,13 @@ export default function DashboardPage() {
       <Grid container spacing={3}>
 
         {/* Example Chart 1: Daily Bookings */}
-        <Grid item xs={12} md={6} lg={7}>
+        <Grid item xs={12} md={6} lg={4}>
           <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
             <Typography variant="h6" gutterBottom component="div">
-              Daily Bookings Overview
+              Daily Bookings
             </Typography>
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={dailyBookingsData}
-                margin={{ top: 5, right: 30, left: 0, bottom: 5 }}
-              >
+              <BarChart data={dailyBookingsData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis allowDecimals={false} />
@@ -65,64 +72,79 @@ export default function DashboardPage() {
           </Paper>
         </Grid>
 
-         {/* Placeholder/Example: Recent Bookings Summary */}
-         <Grid item xs={12} md={6} lg={5}>
-           <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
-             <Typography variant="h6" gutterBottom component="div">
-               Recent Bookings
-             </Typography>
-             {/* TODO: Fetch and display actual recent bookings data */}
-             <List dense sx={{ overflowY: 'auto', flexGrow: 1 }}>
-               {recentBookingsSample.map((booking, index) => (
-                 <React.Fragment key={booking.id}>
-                   <ListItem>
-                     <ListItemText
-                       primary={`${booking.customer} - ${booking.service}`}
-                       secondary={`Status: ${booking.status}`}
-                     />
-                   </ListItem>
-                   {index < recentBookingsSample.length - 1 && <Divider />}
-                 </React.Fragment>
-               ))}
-             </List>
-           </Paper>
-         </Grid>
-
-        {/* Example Chart 2: Revenue Trend */}
-        <Grid item xs={12} md={6} lg={7}>
-            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
-                <Typography variant="h6" gutterBottom component="div">
-                    Monthly Revenue Trend
-                </Typography>
-                <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                        data={revenueData}
-                        margin={{ top: 5, right: 30, left: 0, bottom: 5, }}
-                    >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="month" />
-                        <YAxis />
-                        <Tooltip formatter={(value) => `$${value}`} />
-                        <Legend />
-                        <Line type="monotone" dataKey="revenue" stroke="#82ca9d" activeDot={{ r: 8 }} />
-                    </LineChart>
-                </ResponsiveContainer>
-            </Paper>
+        {/* Example Chart 2: Monthly Revenue Trend */}
+        <Grid item xs={12} md={6} lg={4}>
+          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
+            <Typography variant="h6" gutterBottom component="div">
+              Monthly Revenue
+            </Typography>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={revenueData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="month" />
+                <YAxis />
+                <Tooltip formatter={(value) => `$${value}`} />
+                <Legend />
+                <Line type="monotone" dataKey="revenue" stroke="#82ca9d" activeDot={{ r: 8 }} />
+              </LineChart>
+            </ResponsiveContainer>
+          </Paper>
         </Grid>
 
-        {/* Placeholder: Staff Status / Assignments Summary */}
-        <Grid item xs={12} md={6} lg={5}>
-           <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
-             <Typography variant="h6" gutterBottom component="div">
-               Staff Status / Assignments
-             </Typography>
-             {/* TODO: Fetch and display staff status or assignment summaries */}
-             <Typography variant="body1" sx={{ mt: 2 }}>
-                (Staff assignment summaries and status tracking details would go here)
-             </Typography>
-             {/* Example: List available staff, staff assigned to ongoing jobs, etc. */}
-           </Paper>
-         </Grid>
+        {/* New Chart: Staff Count Trend */}
+        <Grid item xs={12} md={6} lg={4}>
+          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
+            <Typography variant="h6" gutterBottom component="div">
+              Staff Count Trend
+            </Typography>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={staffCountData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="staffCount" stroke="#ffc658" /> 
+                {/* blue  */}
+
+              </LineChart>
+            </ResponsiveContainer>
+          </Paper>
+        </Grid>
+
+        {/* Placeholder/Example: Recent Bookings Summary */}
+        <Grid item xs={12} md={6} lg={6}>
+          <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', height: 280 }}>
+            <Typography variant="h6" gutterBottom component="div">
+              Recent Bookings
+            </Typography>
+            <List dense sx={{ overflowY: 'auto', flexGrow: 1 }}>
+              {recentBookingsSample.map((booking, index) => (
+                <React.Fragment key={booking.id}>
+                  <ListItem>
+                    <ListItemText
+                      primary={`${booking.customer} - ${booking.service}`}
+                      secondary={`Status: ${booking.status}`}
+                    />
+                  </ListItem>
+                  {index < recentBookingsSample.length - 1 && <Divider />}
+                </React.Fragment>
+              ))}
+            </List>
+          </Paper>
+        </Grid>
+
+        {/* New Display: Total Customers */}
+        <Grid item xs={12} md={6} lg={6}>
+          <Paper sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', height: 280 }}>
+            <Typography variant="h5" component="div">
+              Total Customers
+            </Typography>
+            <Typography variant="h2" component="div">
+              {totalCustomers}
+            </Typography>
+          </Paper>
+        </Grid>
 
         {/* Add more Grid items for other summaries or charts as needed */}
 

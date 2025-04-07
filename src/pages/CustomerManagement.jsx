@@ -26,7 +26,7 @@ const CustomerManagement = () => {
 
   return (
     <Container>
-      <Typography variant="h4" sx={{ my: 2 }}>Customer Management</Typography>
+      <Typography variant="h4" sx={{ my: 2 , color: '', fontWeight: 'bold'}}>Customer Management</Typography>
       <CustomerForm onAddCustomer={addCustomer} />
       <CustomerList customers={customers} onDelete={deleteCustomer} onView={viewCustomer} />
     </Container>

@@ -18,24 +18,24 @@ const initialStaffData = [
     id: 1, // Use unique IDs
     image: sampleImage, // Use the imported image variable
     name: 'Alice Johnson',
-    email: 'alice@example.com',
-    phone: '555-0111',
+    email: 'alice@gmail.com',
+    phone: '0788450003',
     role: 'Manager'
   },
   {
     id: 2,
     image: sampleImage,
     name: 'Bob Smith',
-    email: 'bob@example.com',
-    phone: '555-0112',
+    email: 'bob@gmail.com',
+    phone: '0788450003',
     role: 'Technician'
   },
   {
     id: 3,
     image: sampleImage,
     name: 'Charlie Brown',
-    email: 'charlie@example.com',
-    phone: '555-0113',
+    email: 'charlie@gmail.com',
+    phone: '0788450034',
     role: 'Technician'
   },
 ];
