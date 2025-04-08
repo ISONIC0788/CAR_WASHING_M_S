@@ -3,6 +3,7 @@ import { Container, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'; 
 import BookingForm from '../components/BookingForm';
 import BookingTable from '../components/BookingList';
+import Footer from '../components/Footer';
 
 const BookingManagement = () => {
   // Initial booking data
@@ -75,6 +76,7 @@ const BookingManagement = () => {
           <Legend />
           <Line type="monotone" dataKey="bookings" stroke="#8884d8" fill="#8884d8" />
         </LineChart>
+        {/* <Footer></Footer> */}
       </ResponsiveContainer>
     </Container>
   );

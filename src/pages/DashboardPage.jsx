@@ -9,8 +9,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import Footer from '../components/Footer';
 
-// --- Sample Data (Replace with actual data from your components) ---
 // Assuming you can somehow access these data arrays
 const dailyBookingsData = [
   { name: 'Mon', bookings: 4 },
@@ -149,6 +149,7 @@ export default function DashboardPage() {
         {/* Add more Grid items for other summaries or charts as needed */}
 
       </Grid>
+      {/* <Footer></Footer> */}
     </Box>
   );
 }

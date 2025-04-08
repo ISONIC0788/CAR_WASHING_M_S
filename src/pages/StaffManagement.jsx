@@ -2,15 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Paper } from '@mui/material';
-import StaffForm from '../components/StaffForm'; // Ensure this path is correct
-import StaffList from '../components/StaffList'; // Ensure this path is correct
+import StaffForm from '../components/StaffForm'; // 
+import StaffList from '../components/StaffList'; // 
+import Footer from '../components/Footer';
 // import ResponsiveDialog from '../components/ResponsiveDialog'; // Ensure this path is correct and component exists
 import ResponsiveDialogS from '../components/ResponsiveDialogS';
 // Import Recharts components
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 // --- Import your sample image ---
-import sampleImage from '../assets/react.svg'; // Make sure the path is correct
+import sampleImage from '../assets/react.svg'; 
 
 // --- Define Initial Staff Data ---
 const initialStaffData = [
@@ -128,6 +129,7 @@ const StaffManagement = () => {
          staff={viewStaff}        // Pass the selected staff data
        />
       )}
+      {/* <Footer></Footer> */}
     </Container>
   );
 };

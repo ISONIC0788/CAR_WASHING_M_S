@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Container, Typography } from '@mui/material';
 import CustomerForm from '../components/CustomerForm';
 import CustomerList from '../components/CustomerList';
+import Footer from '../components/Footer';
 
 const CustomerManagement = () => {
   const [customers, setCustomers] = useState([
@@ -29,6 +30,7 @@ const CustomerManagement = () => {
       <Typography variant="h4" sx={{ my: 2 , color: '', fontWeight: 'bold'}}>Customer Management</Typography>
       <CustomerForm onAddCustomer={addCustomer} />
       <CustomerList customers={customers} onDelete={deleteCustomer} onView={viewCustomer} />
+      {/* <Footer></Footer> */}
     </Container>
   );
 };

@@ -8,6 +8,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7'; // Sun icon
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CustomHeader from './components/CustomHeader';
+import Footer from './components/Footer';
 
 import { useThemeContext } from './ThemeContext';
 import { NAVIGATION } from './navigation';
@@ -53,8 +54,10 @@ export default function AppLayout() {
        // You might pass asideThemeButtons to a custom sidebar component if needed   
        header={<CustomHeader />} 
       >
+        
         {/* Outlet renders the matched child route component */}
         <Outlet />
+        <Footer />
       </DashboardLayout>
     </AppProvider>
   );

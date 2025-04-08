@@ -79,7 +79,7 @@ const BookingForm = ({ onAddBooking }) => {
         helperText={errors.time}
         sx={{ mb: 2 }}
       />
-      <Button type="submit" variant="contained">Submit</Button>
+      <Button type="submit" variant="contained">Add Booking</Button>
     </Box>
   );
 };

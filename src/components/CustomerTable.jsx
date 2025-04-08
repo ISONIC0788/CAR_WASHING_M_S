@@ -6,6 +6,8 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
+import Footer from './Footer';
+
 // Sample data - Replace with your actual data fetching
 const rows = [
   { id: 1, lastName: 'Snow', firstName: 'Jon', email: 'jon@example.com', phone: '123-456-7890' },
@@ -92,6 +94,7 @@ export default function CustomerTable() {
         // Check @mui/x-data-grid docs for specific configuration
         // [cite: 10, 23]
       />
+       {/* <Footer></Footer> */}
     </Box>
   );
 }
